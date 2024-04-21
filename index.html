@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Webpage</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Is today a good day?</h1>
+        <p>(Based on the current date)</p>
+        <div>
+            <script>
+                // Get the current date
+                var currentDate = new Date();
+                var currentDay = currentDate.getDate();
+                var currentMonth = currentDate.getMonth() + 1; // Months are zero-based
+
+                // Check if the current date is even or odd
+                var isEven = (currentDay % 2 === 0);
+
+                // Display "Yes" or "No" based on the result
+                if (isEven) {
+                    document.write("<p>Yes</p>");
+                } else {
+                    document.write("<p>No</p>");
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
