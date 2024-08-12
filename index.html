@@ -25,6 +25,10 @@
             background-color: #f8f8f8;
             padding: 20px 0;
         }
+        .centered {
+            text-align: center;
+            margin-bottom: 20px; /* Add space between the two centered elements */
+        }
     </style>
 </head>
 <body>
@@ -37,11 +41,18 @@
                 var currentDate = new Date();
                 var targetDate = new Date('2024-10-21');
 
+                // Calculate the difference in time (in milliseconds)
+                var timeDifference = targetDate - currentDate;
+
+                // Calculate the difference in days
+                var daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
                 // Check if the current date is before Monday, October 21, 2024
                 if (currentDate < targetDate) {
-                    document.write("<p style='font-size: 32px; color: green;'>Ja</p>");
+                    document.write("<div class='centered'><p style='font-size: 32px; color: green;'>Ja</p></div>");
+                    document.write("<div class='centered'><p style='font-size: 20px; color: black;'><em>See you in " + daysRemaining + " day(s)!</em></p></div>");
                 } else {
-                    document.write("<p style='font-size: 32px; color: red;'>Nej</p>");
+                    document.write("<div class='centered'><p style='font-size: 32px; color: red;'>Nej</p></div>");
                 }
             </script>
         </div>
